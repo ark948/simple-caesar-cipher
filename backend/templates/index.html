@@ -97,6 +97,22 @@
                     }
                 });
             });
+
+            $("#decrypt-form").on('submit', (e) => {
+                e.preventDefault();
+
+                $.ajax({
+                    type: 'POST',
+                    url: "{{ url_for('decrypt') }}",
+                    data: $(this).serialize(),
+                    success: (response) => {
+                        console.log(response.data);
+                    },
+                    error: (xhr, status, error) => {
+                        console.log('Submission error:', error);
+                    }
+                });
+            });
         });
     </script>
 </body>
