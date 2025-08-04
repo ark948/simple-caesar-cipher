@@ -1,0 +1,41 @@
+#main-container {
+    padding: 20px;
+    margin: 0 auto;
+    width: 50%;
+}
+
+#encrypt-container {
+    margin: 50px;
+}
+
+#decrypt-container {
+    margin: 50px;
+}
+
+button {
+    margin: 10px;
+    width: 60px;
+    height: 30px;
+    background-color: lightgray;
+    color: black;
+    border: 1px solid black;
+    border-radius: 20%;
+}
+
+#encrypt-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#decrypt-form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px;
+}
+
+input {
+    margin: 10px;
+}

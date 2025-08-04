@@ -3,29 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Caesar Cipher</title>
 </head>
 <body>
-    <p>Encrypt:</p>
-    <form method="post" action="{{ url_for('encrypt') }}">
-        <label for="input-text">Input:</label>
-        <textarea name="input-text" id="input-text" placeholder="text to encrypt" cols="50" rows="10"></textarea>
-        <label for="key">Shift/Key:</label>
-        <input type="number" name="key">
-        <button type="submit">
-            Encrypt
-        </button>
-    </form>
-    
-    <p>Decrypt:</p>
-    <form method="post" action="{{ url_for('decrypt') }}">
-        <label for="input-text">Input:</label>
-        <textarea name="input-text" id="input-text" placeholder="text to decrypt" cols="50" rows="10"></textarea>
-        <label for="key">Shift/Key:</label>
-        <input type="number" name="key">
-        <button type="submit">
-            Decrypt
-        </button>
-    </form>
+    <div id="main-container">
+        <div id="encrypt-container">
+            <p>Encrypt:</p>
+            <form method="post" action="{{ url_for('encrypt') }}" id="encrypt-form">
+                <label for="input-text">Input:</label>
+                <textarea name="input-text" id="input-text" placeholder="text to encrypt" cols="50" rows="10"></textarea>
+                <label for="key">Shift/Key:</label>
+                <input type="number" name="key">
+                <button type="submit">
+                    Encrypt
+                </button>
+            </form>
+        </div>        
+        <div id="decrypt-container">
+            <p>Decrypt:</p>
+            <form method="post" action="{{ url_for('decrypt') }}" id="decrypt-form">
+                <label for="input-text">Input:</label>
+                <textarea name="input-text" id="input-text" placeholder="text to decrypt" cols="50" rows="10"></textarea>
+                <label for="key">Shift/Key:</label>
+                <input type="number" name="key">
+                <button type="submit">
+                    Decrypt
+                </button>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/base.js') }}"></script>
 </body>
 </html>
