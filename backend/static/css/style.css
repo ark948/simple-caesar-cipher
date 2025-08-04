@@ -1,11 +1,32 @@
+#main-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+    padding: 50px;
+    align-items: center;
+}
+
+#encrypt-container-main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#decrypt-container-main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 button {
     margin: 10px;
     width: 60px;
     height: 30px;
     background-color: lightgray;
     color: black;
-    border: 1px solid black;
-    border-radius: 20%;
+    border: 1px solid gray;
+    border-radius: 30%;
 }
 
 label {
