@@ -119,7 +119,8 @@
             });
 
             $("#encrypt-clear-button").on("click", (e) => {
-                console.log("BUTTON CLICKED");
+                e.preventDefault();
+                $("#encrypt-input-text").val('');
             })
         });
     </script>
