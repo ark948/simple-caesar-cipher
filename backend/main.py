@@ -15,7 +15,7 @@ def index():
 @app.route('/encrypt/', methods=('POST',))
 def encrypt():
     if request.method == "POST":
-        text = request.form['input-text']
+        text = request.form['encrypt-input-text']
         key = request.form['key']
         if not text or not key:
             return jsonify( {'error': "Server error", "code": 500} )
