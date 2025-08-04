@@ -15,12 +15,12 @@
             <div id="encrypt-container-main">
                 <!-- Encrypt Input -->
                 <div id="encrypt-container-input">
-                    <h2>Encrypt</h2>
+                    <h2>Encrypt:</h2>
                     <form method="post" action="{{ url_for('encrypt') }}" id="encrypt-form">
                         <label for="input-text">Input:</label>
                         <textarea name="encrypt-input-text" id="encrypt-input-text" placeholder="text to encrypt" cols="50" rows="10"></textarea>
                         <label for="key">Shift/Key:</label>
-                        <input type="number" name="key">
+                        <input type="number" name="key" id="en_key" placeholder="7 (example)">
                         <div class="form-actions">
                             <button type="submit">
                                 Encrypt
@@ -50,10 +50,15 @@
                         <label for="input-text">Input:</label>
                         <textarea name="decrypt-input-text" id="decrypt-input-text" placeholder="text to decrypt" cols="50" rows="10"></textarea>
                         <label for="key">Shift/Key:</label>
-                        <input type="number" name="key">
-                        <button type="submit">
-                            Decrypt
-                        </button>
+                        <input type="number" name="key" id="de_key" placeholder="7 (example)">
+                        <div class="form-actions">
+                            <button type="submit">
+                                Decrypt
+                            </button>
+                            <button id="decrypt-clear-button">
+                                Clear
+                            </button>
+                        </div>
                     </form>
                 </div>
 
@@ -121,6 +126,15 @@
             $("#encrypt-clear-button").on("click", (e) => {
                 e.preventDefault();
                 $("#encrypt-input-text").val('');
+                $("#encrypt-response-area").val('');
+                $("#en_key").val('');
+            });
+
+            $("#decrypt-clear-button").on("click", (e) => {
+                e.preventDefault();
+                $("#decrypt-input-text").val('');
+                $("#decrypt-response-area").val('');
+                $("#de_key").val('');
             })
         });
     </script>
