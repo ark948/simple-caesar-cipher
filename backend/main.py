@@ -18,7 +18,7 @@ def encrypt():
         text = request.form['input-text']
         key = request.form['key']
         if not text or not key:
-            flash("Input text or key is missing.")
+            return jsonify( {'error': "Server error", "code": 500} )
         else:
             encrypted_text = caesar_cipher_encrypt(s=text, key=int(key))
             return jsonify( {'data': encrypted_text})
@@ -27,13 +27,13 @@ def encrypt():
 @app.route('/decrypt/', methods=('POST',))
 def decrypt():
     if request.method == "POST":
-        text = request.form['input-text']
+        text = request.form['decrypt-input-text']
         key = request.form['key']
         if not text or not key:
-            flash("Input text or key is missing.")
+            return jsonify( {'error': "Server error", "code": 500} )
         else:
             decrypted_text = caesar_cipher_decrypt(s=text, key=int(key))
-            return Response(f"DECRYPTED TEXT => {decrypted_text}", status=200)
+            return jsonify( {'data': decrypted_text} )
 
 
 if __name__ == "__main__":

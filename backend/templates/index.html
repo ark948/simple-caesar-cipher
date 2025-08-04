@@ -15,10 +15,10 @@
             <div id="encrypt-container-main">
                 <!-- Encrypt Input -->
                 <div id="encrypt-container-input">
-                    <p>Encrypt:</p>
+                    <h2>Encrypt</h2>
                     <form method="post" action="{{ url_for('encrypt') }}" id="encrypt-form">
                         <label for="input-text">Input:</label>
-                        <textarea name="input-text" id="input-text" placeholder="text to encrypt" cols="50" rows="10"></textarea>
+                        <textarea name="encrypt-input-text" id="encrypt-input-text" placeholder="text to encrypt" cols="50" rows="10"></textarea>
                         <label for="key">Shift/Key:</label>
                         <input type="number" name="key">
                         <button type="submit">
@@ -40,10 +40,10 @@
             <div id="decrypt-container-main">
                 <!-- Decrypt Input -->
                 <div id="decrypt-container-input">
-                    <p>Decrypt:</p>
+                    <h2>Decrypt:</h2>
                     <form method="post" action="{{ url_for('decrypt') }}" id="decrypt-form">
                         <label for="input-text">Input:</label>
-                        <textarea name="input-text" id="input-text" placeholder="text to decrypt" cols="50" rows="10"></textarea>
+                        <textarea name="decrypt-input-text" id="decrypt-input-text" placeholder="text to decrypt" cols="50" rows="10"></textarea>
                         <label for="key">Shift/Key:</label>
                         <input type="number" name="key">
                         <button type="submit">
@@ -92,24 +92,24 @@
                         $("#encrypt-response-area").val(response.data);
                     },
                     error: function(error) {
-                        alert("ERROR");
                         console.log(error);
                     }
                 });
             });
 
-            $("#decrypt-form").on('submit', (e) => {
+            $("#decrypt-form").on('submit', function(e) {
+                console.log("FORM SUBMITTED");
                 e.preventDefault();
 
                 $.ajax({
-                    type: 'POST',
+                    type: "POST",
                     url: "{{ url_for('decrypt') }}",
                     data: $(this).serialize(),
-                    success: (response) => {
-                        console.log(response.data);
+                    success: function(response) {
+                        $("#decrypt-response-area").val(response.data);
                     },
-                    error: (xhr, status, error) => {
-                        console.log('Submission error:', error);
+                    error: function(error) {
+                        console.log(error);
                     }
                 });
             });
