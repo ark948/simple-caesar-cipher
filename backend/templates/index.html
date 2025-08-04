@@ -7,32 +7,64 @@
     <title>Caesar Cipher</title>
 </head>
 <body>
+    <!-- MAIN CONTAINER -->
     <div id="main-container">
-        <div id="encrypt-container">
-            <p>Encrypt:</p>
-            <form method="post" action="{{ url_for('encrypt') }}" id="encrypt-form">
-                <label for="input-text">Input:</label>
-                <textarea name="input-text" id="input-text" placeholder="text to encrypt" cols="50" rows="10"></textarea>
-                <label for="key">Shift/Key:</label>
-                <input type="number" name="key">
-                <button type="submit">
-                    Encrypt
-                </button>
-            </form>
-        </div>        
-        <div id="decrypt-container">
-            <p>Decrypt:</p>
-            <form method="post" action="{{ url_for('decrypt') }}" id="decrypt-form">
-                <label for="input-text">Input:</label>
-                <textarea name="input-text" id="input-text" placeholder="text to decrypt" cols="50" rows="10"></textarea>
-                <label for="key">Shift/Key:</label>
-                <input type="number" name="key">
-                <button type="submit">
-                    Decrypt
-                </button>
-            </form>
-        </div>
+
+        <!-- ENCRYPT CONTAINER -->
+            <div id="encrypt-container-main">
+                <!-- Encrypt Input -->
+                <div id="encrypt-container-input">
+                    <p>Encrypt:</p>
+                    <form method="post" action="{{ url_for('encrypt') }}" id="encrypt-form">
+                        <label for="input-text">Input:</label>
+                        <textarea name="input-text" id="input-text" placeholder="text to encrypt" cols="50" rows="10"></textarea>
+                        <label for="key">Shift/Key:</label>
+                        <input type="number" name="key">
+                        <button type="submit">
+                            Encrypt
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Encrypt Output -->
+                <div id="encrypt-container-output">
+                    <div id="encrypt-response-holder">
+                        <label for="encrypt-response-area">Encrypted results:</label>
+                        <textarea name="encrypt-response-area" id="encrypt-response-area"></textarea>
+                    </div>
+                </div>
+            </div>
+
+        <!-- DECRYPT CONTAINER -->
+            <div id="decrypt-container-main">
+                
+                <!-- Decrypt Input -->
+                <div id="decrypt-container-input">
+                    <p>Decrypt:</p>
+                    <form method="post" action="{{ url_for('decrypt') }}" id="decrypt-form">
+                        <label for="input-text">Input:</label>
+                        <textarea name="input-text" id="input-text" placeholder="text to decrypt" cols="50" rows="10"></textarea>
+                        <label for="key">Shift/Key:</label>
+                        <input type="number" name="key">
+                        <button type="submit">
+                            Decrypt
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Decrypt Output -->
+                 <div id="decrypt-container-output">
+                    <div id="decrypt-response-holder">
+                        <label for="decrypt-response-area">Decrypted results:</label>
+                        <textarea name="decrypt-response-area" id="decrypt-response-area"></textarea>
+                    </div>
+                 </div>
+            </div>
+
+
     </div>
+
     <script src="{{ url_for('static', filename='js/base.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery-3.7.1.min') }}"></script>
 </body>
 </html>
