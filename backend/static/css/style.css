@@ -52,3 +52,9 @@ label {
 input {
     margin: 10px;
 }
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}

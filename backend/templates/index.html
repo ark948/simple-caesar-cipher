@@ -21,9 +21,14 @@
                         <textarea name="encrypt-input-text" id="encrypt-input-text" placeholder="text to encrypt" cols="50" rows="10"></textarea>
                         <label for="key">Shift/Key:</label>
                         <input type="number" name="key">
-                        <button type="submit">
-                            Encrypt
-                        </button>
+                        <div class="form-actions">
+                            <button type="submit">
+                                Encrypt
+                            </button>
+                            <button id="encrypt-clear-button">
+                                Clear
+                            </button>
+                        </div>
                     </form>
                 </div>
 
@@ -112,6 +117,10 @@
                     }
                 });
             });
+
+            $("#encrypt-clear-button").on("click", (e) => {
+                console.log("BUTTON CLICKED");
+            })
         });
     </script>
 </body>
