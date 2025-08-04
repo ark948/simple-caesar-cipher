@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash, Response, url_for
+from flask import Flask, render_template, request, flash, Response, url_for, jsonify
 from dotenv import load_dotenv
 import os
 
@@ -21,7 +21,7 @@ def encrypt():
             flash("Input text or key is missing.")
         else:
             encrypted_text = caesar_cipher_encrypt(s=text, key=int(key))
-            return Response(f"ENCRYPTED TEXT => {encrypted_text}", status=200)
+            return jsonify( {'data': encrypted_text})
         
 
 @app.route('/decrypt/', methods=('POST',))

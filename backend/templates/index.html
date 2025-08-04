@@ -31,7 +31,7 @@
                 <div id="encrypt-container-output">
                     <div id="encrypt-response-holder">
                         <label for="encrypt-response-area">Encrypted results:</label>
-                        <textarea name="encrypt-response-area" id="encrypt-response-area"></textarea>
+                        <textarea name="encrypt-response-area" id="encrypt-response-area" cols="50" rows="10"></textarea>
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@
                  <div id="decrypt-container-output">
                     <div id="decrypt-response-holder">
                         <label for="decrypt-response-area">Decrypted results:</label>
-                        <textarea name="decrypt-response-area" id="decrypt-response-area"></textarea>
+                        <textarea name="decrypt-response-area" id="decrypt-response-area" cols="50" rows="10"></textarea>
                     </div>
                  </div>
             </div>
@@ -89,7 +89,7 @@
                     url: "{{ url_for('encrypt') }}",
                     data: $(this).serialize(),
                     success: function(response) {
-                        alert("SUCCESS");
+                        $("#encrypt-response-area").val(response.data);
                     },
                     error: function(error) {
                         alert("ERROR");
