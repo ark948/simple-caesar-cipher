@@ -65,6 +65,39 @@
     </div>
 
     <script src="{{ url_for('static', filename='js/base.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/jquery-3.7.1.min') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery-3.7.1.min.js') }}"></script>
+    <script type="text/javascript">
+        window.onload = function()
+        {
+            if (window.jQuery)
+            {
+                console.log("JQuery loaded successfully.");
+            }
+            else
+            {
+                console.log("JQuery failed to load.");
+            }
+        }
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#encrypt-form").on('submit', function(e) {
+                e.preventDefault();
+
+                $.ajax({
+                    type: 'POST',
+                    url: "{{ url_for('encrypt') }}",
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        alert("SUCCESS");
+                    },
+                    error: function(error) {
+                        alert("ERROR");
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

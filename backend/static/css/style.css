@@ -41,12 +41,8 @@
 
 button {
     margin: 10px;
-    width: 60px;
+    width: 100px;
     height: 30px;
-    background-color: lightgray;
-    color: black;
-    border: 1px solid gray;
-    border-radius: 30%;
 }
 
 label {
