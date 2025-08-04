@@ -13,10 +13,30 @@
     align-items: center;
 }
 
+#encrypt-container-input {
+    display: flex;
+    flex-direction: column;
+}
+
+#encrypt-form {
+    display: flex;
+    flex-direction: column;
+}
+
 #decrypt-container-main {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+#decrypt-container-input {
+    display: flex;
+    flex-direction: column;
+}
+
+#decrypt-form {
+    display: flex;
+    flex-direction: column;
 }
 
 button {
