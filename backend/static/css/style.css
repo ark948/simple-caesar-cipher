@@ -43,18 +43,23 @@ body {
     flex-direction: column;
 }
 
+p {
+    font-weight: bold;
+}
+
 button {
     margin: 10px;
     width: 100px;
     height: 30px;
-    background-color: white;
+    background-color: lightgreen;
     color: black;
-    border: 2px solid green;
+    border: 2px solid black;
     border-radius: 4px;
 }
 
 label {
     margin: 10px;
+    font-weight: bold;
 }
 
 input {
