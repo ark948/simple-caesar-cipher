@@ -1,4 +1,4 @@
-Very basic Caesar Ciphter program
+Very basic Caesar Cipher program
 
 Tools used:
 * Python 3.11.5
